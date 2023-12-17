@@ -11,17 +11,19 @@
     - [Questions](#questions)
 
     ## Description
-    This project is a Readme Generator that has been created using node.js and inquirer.js
+    bkbbwi;v
+
+    ## License
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    This application is covered under the MIT license.
 
     ## Installation
     No
 
     ## Usage
-    You are presented with a series of questions and the readme is populated based on your answers
+    kbiidwhbfw
 
-    ## License
-    ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-    This application is covered under the MIT license.
+
 
     ## Contributing
     undefined
@@ -32,3 +34,4 @@
     ## Questions
     GitHub: [undefined](https://github.com/undefined)
     Email: undefined
+  
