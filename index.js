@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
-const { url } = require("inspector");
+// const { url } = require("inspector");
 
 // Function to generate README content based on user responses
 function generateREADME(data) {
@@ -15,7 +15,6 @@ function generateREADME(data) {
     tests,
     githubUsername,
     githubLink,
-    email,
   } = data;
 
   const licenseBadges = {
@@ -30,116 +29,110 @@ function generateREADME(data) {
   const licenseNotice = `This application is covered under the ${license} license.`;
 
   const readmeContent = `
-    # ${name}
+  # ${name}
 
-    ## Table of Contents
-    - [Description](#description)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    ## Description
-    ${description}
+## Description
+${description}
 
-    ## License
-    ${licenseBadge}
-    ${licenseNotice}
+## License
+${licenseBadge}
+${licenseNotice}
 
-    ## Installation
-    ${installation}
+## Installation
+${installation}
 
-    ## Usage
-    ${usage}
+## Usage
+${usage}
 
-    ## Contributing
-    ${contributing}
+## Contributing
+${contributing}
 
-    ## Tests
-    ${tests}
+## Tests
+${tests}
 
-    ## Questions
-    If you have any questions, feel free to reach out:
-    - GitHub: ${githubUsername}
-    - GitHub Link: ${githubLink}
-  `;
+## Questions
+If you have any questions, feel free to reach out:
+- GitHub: ${githubUsername}
+- GitHub Link: ${githubLink}
+
+`;
 
   return readmeContent;
 }
 
 
-// Array of questions for user
+// Prompt the user with a series of questions
 const questions = [
-  // Your list of prompts for gathering project information
-  {
-    type: "input",
-    message: "What is your project name?",
-    name: "name",
-  },
-  {
-    type: "input",
-    message: "Give a description of your project",
-    name: "description",
-  },
-  {
-    type: "checkbox",
-    name: "contents",
-    message: "What are the contents of the Readme?",
-    choices: [
-      "Installation",
-      "Usage",
-      "License",
-      "Contributing",
-      "Tests",
-      "Questions",
-      // "GitHub Username",
-      // "GitHub Link",
-    ],
-  },
-  {
-    type: "checkbox",
-    message: "Is there any installation required?",
-    name: "installation",
-    choices: ["Yes", "No"],
-  },
-  {
-    type: "input",
-    message: "How do you use the readme generator?",
-    name: "usage",
-  },
-  {
-    type: "checkbox",
-    message: "Select a license",
-    name: "license",
-    choices: ["MIT", "APACHE 2.0", "Mozilla"],
-  },
-  {
-    type: "input",
-    message: "Names of contributors to the project",
-    name: "contributing",
-  },
-  {
-    type: "input",
-    message: "Are there any tests to run?",
-    name: "tests",
-  },
-  {
-    type: "input",
-    message: "What is your GitHub username?",
-    name: "githubUsername",
-  },
-  // {
-  //   type: "input",
-  //   message: "How can people who wish to contribute contact you?",
-  //   name: "questions",
-  // },
-  {
-    type: "input",
-    message: "What is the link to your GitHub profile?",
-    name: "githubLink",
-  },
+  // Prompt for list of questions
+{
+  type: "input",
+  message: "What is your project name?",
+  name: "name",
+},
+{
+  type: "input",
+  message: "Give a description of your project",
+  name: "description",
+},
+{
+  type: "checkbox",
+  name: "contents",
+  message: "What are the contents of the Readme?",
+  choices: [
+    "Installation",
+    "Usage",
+    "License",
+    "Contributing",
+    "Tests",
+    "Questions",
+  ],
+},
+{
+  type: "checkbox",
+  message: "Is there any installation required?",
+  name: "installation",
+  choices: ["Yes", "No"],
+},
+{
+  type: "input",
+  message: "How do you use the readme generator?",
+  name: "usage",
+},
+{
+  type: "checkbox",
+  message: "Select a license",
+  name: "license",
+  choices: ["MIT", "APACHE 2.0", "Mozilla"],
+},
+{
+  type: "input",
+  message: "Names of contributors to the project",
+  name: "contributing",
+},
+{
+  type: "input",
+  message: "Are there any tests to run?",
+  name: "tests",
+},
+{
+  type: "input",
+  message: "What is your GitHub username?",
+  name: "githubUsername",
+},
+{
+  type: "input",
+  message: "What is the link to your GitHub profile?",
+  name: "githubLink",
+},
 ];
 
 // Prompt the user for information
