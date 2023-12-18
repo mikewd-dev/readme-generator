@@ -97,10 +97,9 @@ const questions = [
   ],
 },
 {
-  type: "checkbox",
+  type: "input",
   message: "Is there any installation required?",
   name: "installation",
-  choices: ["Yes", "No"],
 },
 {
   type: "input",
@@ -115,7 +114,7 @@ const questions = [
 },
 {
   type: "input",
-  message: "Names of contributors to the project",
+  message: "How can someone contribute to this project?",
   name: "contributing",
 },
 {
