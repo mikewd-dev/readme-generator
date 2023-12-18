@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
+const { url } = require("inspector");
 // const { type } = require("os");
 
 // Function to generate README content based on user responses
@@ -15,14 +16,17 @@ function generateREADME(data) {
     license,
     contributing,
     tests,
-    github,
+    githubUsername,
+    githubLink,
     email,
   } = data;
 
   const licenseBadges = {
-    MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    'APACHE 2.0': '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-    Mozilla: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
+    MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+    "APACHE 2.0":
+      "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
+    Mozilla:
+      "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
   };
 
   const licenseBadge = licenseBadges[license];
@@ -38,7 +42,8 @@ function generateREADME(data) {
     - [License](#license)
     - [Contributing](#contributing)
     - [Tests](#tests)
-    - [Questions](#questions)
+    - [Github Username](#githubUsername)
+    - [Github Link](#githubLink)
 
     ## Description
     ${description}
@@ -61,9 +66,13 @@ function generateREADME(data) {
     ## Tests
     ${tests}
 
-    ## Questions
-    GitHub: [${github}](https://github.com/${github})
-    Email: ${email}
+
+    ## GitHub Username
+    ${githubUsername}
+
+    ## GitHub Link
+    ${githubLink}
+
   `;
 
   return readmeContent;
@@ -92,7 +101,8 @@ const questions = [
       "License",
       "Contributing",
       "Tests",
-      "Questions",
+      "GitHub Username",
+      "GitHub Link",
     ],
   },
   {
@@ -115,7 +125,7 @@ const questions = [
   {
     type: "input",
     message: "Names of contributors to the project",
-    name: "contributors",
+    name: "contributing",
   },
   {
     type: "input",
@@ -124,8 +134,13 @@ const questions = [
   },
   {
     type: "input",
-    message: "Any questions?",
-    name: "questions"
+    message: "What is your GitHub username?",
+    name: "githubUsername",
+  },
+  {
+    type: "input",
+    message: "What is the link to your GitHub profile?",
+    name: "githubLink",
   },
 ];
 
