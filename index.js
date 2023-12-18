@@ -2,12 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
 const { url } = require("inspector");
-// const { type } = require("os");
 
 // Function to generate README content based on user responses
 function generateREADME(data) {
-  // Use the 'data' object to structure the README content
-  // Create sections, badges, links, etc., based on user responses
   const {
     name,
     description,
@@ -42,8 +39,7 @@ function generateREADME(data) {
     - [License](#license)
     - [Contributing](#contributing)
     - [Tests](#tests)
-    - [Github Username](#githubUsername)
-    - [Github Link](#githubLink)
+    - [Questions](#questions)
 
     ## Description
     ${description}
@@ -58,25 +54,21 @@ function generateREADME(data) {
     ## Usage
     ${usage}
 
-
-
     ## Contributing
     ${contributing}
 
     ## Tests
     ${tests}
 
-
-    ## GitHub Username
-    ${githubUsername}
-
-    ## GitHub Link
-    ${githubLink}
-
+    ## Questions
+    If you have any questions, feel free to reach out:
+    - GitHub: ${githubUsername}
+    - GitHub Link: ${githubLink}
   `;
 
   return readmeContent;
 }
+
 
 // Array of questions for user
 const questions = [
@@ -101,8 +93,9 @@ const questions = [
       "License",
       "Contributing",
       "Tests",
-      "GitHub Username",
-      "GitHub Link",
+      "Questions",
+      // "GitHub Username",
+      // "GitHub Link",
     ],
   },
   {
@@ -137,6 +130,11 @@ const questions = [
     message: "What is your GitHub username?",
     name: "githubUsername",
   },
+  // {
+  //   type: "input",
+  //   message: "How can people who wish to contribute contact you?",
+  //   name: "questions",
+  // },
   {
     type: "input",
     message: "What is the link to your GitHub profile?",
