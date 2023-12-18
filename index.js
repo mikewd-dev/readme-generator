@@ -140,7 +140,7 @@ inquirer.prompt(questions).then((answers) => {
   const readmeContent = generateREADME(answers);
 
   // Write the generated README content to a file (e.g., README.md)
-  fs.writeFile("README.md", readmeContent, (err) => {
+  fs.writeFile("GENERATE-README.md", readmeContent, (err) => {
     if (err) throw err;
     console.log("README.md has been created successfully!");
   });
