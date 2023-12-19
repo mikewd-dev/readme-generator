@@ -19,6 +19,17 @@ Please see the video below to see a demonstration of the application
 
 https://drive.google.com/file/d/1GoDN8m3Eqn__f6z_Ta4PjT59swt_L3g1/view
 
+## Credits
+
+Inquirer
+
+https://github.com/SBoudrias/Inquirer.js
+
+NPM
+https://www.npmjs.com/
+
+
+
 ## License
 
 Please see the LICENSE in the repo.
