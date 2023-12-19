@@ -1,5 +1,5 @@
 
-  # oonfwfofw
+  # Readme Generator
 
 ## Table of Contents
 - [Description](#description)
@@ -11,26 +11,26 @@
 - [Questions](#questions)
 
 ## Description
-wofowofowhfow
+This Readme generator was made using NodeJs with Inquirer. The app will automatically generate a professional readme based on the user's responses to a series of questions/prompts
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This application is covered under the MIT license.
 
 ## Installation
-kjjwnjwjknkjwnkjfwef
+Nodejs, NPM and Inquirer are required to run this application
 
 ## Usage
-https://drive.google.com/file/d/1GoDN8m3Eqn__f6z_Ta4PjT59swt_L3g1/view
+Run node index.js in the terminal and answer/respond to the prompts presented.
 
 ## Contributing
-wnwjnljnwnf
+There are currently no contributions required for the application
 
 ## Tests
-jwnfnjnkwnf
+N/A
 
 ## Questions
 If you have any questions, feel free to reach out:
-- GitHub: mike
-- GitHub Link: miked
+- GitHub: mikewd-dev
+- GitHub Link: www.github.com/mikewd-dev
 
